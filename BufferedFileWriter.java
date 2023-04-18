@@ -7,6 +7,9 @@ public class BufferedFileWriter{
     private String defaultPath = "C:\\Computer Science\\Mason's Files\\java projects\\Recreational\\API&Scrapers";
     private String path; 
 
+    public BufferedFileWriter(String fileName){
+        path = defaultPath + fileName;
+    }
     public void BufferedFileWriter(String fileName, boolean isPath){
         if(isPath){
             path = fileName;

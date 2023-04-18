@@ -57,9 +57,10 @@ public class StocksWebScraper {
         for (Element e:abrreviations) {
             System.out.println(e.text());
         }
-
+        BufferedFileWriter writer = new BufferedFileWriter("testFile.dat");
         for(String[] x : infoLines){
             System.out.println(Arrays.toString(x));
+
         }
 
         
