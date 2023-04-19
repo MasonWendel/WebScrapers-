@@ -16,9 +16,8 @@ public class BufferedFileWriter{
         } else {
             path = defaultPath + fileName;
         }
-        
     }
-
+    
     public void writeLine(String line, boolean override){
         try {
             BufferedWriter f_writer = new BufferedWriter(new FileWriter(path));

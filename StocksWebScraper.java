@@ -62,7 +62,5 @@ public class StocksWebScraper {
             System.out.println(Arrays.toString(x));
 
         }
-
-        
     }
 }
