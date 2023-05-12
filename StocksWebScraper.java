@@ -1,6 +1,6 @@
 import java.io.IOException;
 import java.util.*;
-
+import java.nio.charset.*;
 import javax.swing.text.AbstractDocument.ElementEdit;
 
 import org.jsoup.Jsoup;
@@ -16,6 +16,7 @@ public class StocksWebScraper {
         Elements names = page.select("sup");
         Elements everythingElse = page.select("tr > td");
         ArrayList<String[]> infoLines = new ArrayList<String[]>();
+        System.out.println(Charset.defaultCharset());
         // companyNames = 0  
         // prices = 1 
         // percentChange = 2
@@ -57,7 +58,7 @@ public class StocksWebScraper {
         for (Element e:abrreviations) {
             System.out.println(e.text());
         }
-        BufferedFileWriter writer = new BufferedFileWriter("testFile.txt");
+        BufferedFileWriter writer = new BufferedFileWriter("testFile.txt", true);
         for(String[] x : infoLines){
             System.out.println(Arrays.toString(x));
              

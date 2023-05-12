@@ -10,7 +10,7 @@ public class BufferedFileWriter{
     public BufferedFileWriter(String fileName){
         path = defaultPath + fileName;
     }
-    public void BufferedFileWriter(String fileName, boolean isPath){
+    public BufferedFileWriter(String fileName, boolean isPath){
         if(isPath){
             path = fileName;
         } else {
@@ -29,6 +29,7 @@ public class BufferedFileWriter{
             
 
         } catch (Exception e){
+            System.out.println("ERROR: " + e.getMessage());
         }
     }
     public void writeLines(ArrayList<String> arr, boolean override){
