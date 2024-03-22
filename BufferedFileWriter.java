@@ -1,20 +1,21 @@
 import java.io.BufferedWriter;
 import java.util.ArrayList;
 import java.io.FileWriter;
-import java.io.IOException;
 public class BufferedFileWriter{
-    private boolean override;
-    private String defaultPath = "C:\\Computer Science\\Mason's Files\\java projects\\Recreational\\API&Scrapers\\";
+    private String currDir = System.getProperty("user.dir");
     private String path; 
 
-    public BufferedFileWriter(String fileName){
-        path = defaultPath + fileName;
+    
+
+    public BufferedFileWriter(String fileName){ //used
+        path = currDir + fileName;
+        System.out.println(currDir); 
     }
     public BufferedFileWriter(String fileName, boolean isPath){
         if(isPath){
             path = fileName;
         } else {
-            path = defaultPath + fileName;
+            path = currDir + fileName;
         }
     }
     
@@ -24,9 +25,6 @@ public class BufferedFileWriter{
             f_writer.write(line);
             f_writer.newLine();
             f_writer.close();
-            System.out.println("This bit works");
-            
-            
 
         } catch (Exception e){
             System.out.println("ERROR: " + e.getMessage());
@@ -41,6 +39,7 @@ public class BufferedFileWriter{
             }
             f_writer.close();
         } catch (Exception e){
+            System.out.println("ERROR: " + e.getMessage());
         }
     }
    
