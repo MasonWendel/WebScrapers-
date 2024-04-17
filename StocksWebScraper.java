@@ -5,7 +5,6 @@ import javax.swing.text.AbstractDocument.ElementEdit;
 
 import org.jsoup.Jsoup;
 import org.jsoup.helper.Validate;
-import org.jsoup.helper.Validate;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
@@ -22,7 +21,6 @@ public class StocksWebScraper {
 
         String jsonPayload = "{\"columns\":[\"name\",\"description\",\"logoid\",\"update_mode\",\"type\",\"typespecs\",\"close\",\"pricescale\",\"minmov\",\"fractional\",\"minmove2\",\"currency\",\"change\",\"volume\",\"relative_volume_10d_calc\",\"market_cap_basic\",\"fundamental_currency_code\",\"price_earnings_ttm\",\"earnings_per_share_diluted_ttm\",\"earnings_per_share_diluted_yoy_growth_ttm\",\"dividends_yield_current\",\"sector.tr\",\"market\",\"sector\",\"recommendation_mark\"],\"ignore_unknown_fields\":false,\"options\":{\"lang\":\"en\"},\"range\":[0,200],\"sort\":{\"sortBy\":\"name\",\"sortOrder\":\"asc\",\"nullsFirst\":false},\"preset\":\"all_stocks\"}";
         String json = Jsoup.connect("https://scanner.tradingview.com/america/scan").ignoreContentType(true).requestBody(jsonPayload).post().body().text();
-        System.out.println(json);
         // companyNames = 0  
         // prices = 1 
         // percentChange = 2
